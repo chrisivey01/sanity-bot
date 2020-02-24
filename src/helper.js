@@ -18,7 +18,7 @@ module.exports = {
         const botId = message.guild.members.find(m => m.user.username === "Sanity Bot");
         message.channel.send(text + " You will be notified by <#614866266590674954> once the server is up.")
 
-        const collector = new Discord.MessageCollector(message.channel, m => m.author.id === message.author.id);
+        const collector = new Discord.MessageCollector(message.channel, m => m.author.id !== message.author.id && m.author.id !== "681175975408828417");
         collector.on('collect', message => {
             if(message.content === "!done" && adminRole){
                 message.channel.send('Release completed.')
