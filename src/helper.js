@@ -23,9 +23,10 @@ module.exports = {
             if(message.content === "!done" && adminRole){
                 message.channel.send('Release completed.')
                 collector.stop()
-            }
+            } else { 
             botId.lastMessage.delete().catch(O_o=>{}); 
             message.channel.send(text + " You will be notified by <#614866266590674954> once the server is up.")
+            }
         })
     }
 }
