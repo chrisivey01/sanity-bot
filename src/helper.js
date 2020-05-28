@@ -16,7 +16,7 @@ module.exports = {
         const text = releaseInfo.join(" ")
 
         const botId = message.guild.members.find(m => m.user.username === "Sanity Bot");
-        message.channel.send(text + " You will be notified by <#614866266590674954> once the server is up.")
+        message.channel.send(text)
 
         const collector = new Discord.MessageCollector(message.channel, m => m.author.username !== "Sanity Bot");
         collector.on('collect', message => {
@@ -25,7 +25,7 @@ module.exports = {
                 collector.stop()
             } else { 
             botId.lastMessage.delete().catch(O_o=>{}); 
-            message.channel.send(text + " You will be notified by <#614866266590674954> once the server is up.")
+            message.channel.send(text)
             }
         })
     }
